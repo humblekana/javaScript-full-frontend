@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" >
+        <label for="">โปรดใส่ชื่อ</label>
+        <input id="mytext" type="text" placeholder="ใส่ชื่อตรงนี้" > <br>
+        <label for="">เลือกโปรแกรม</label>
+        <select name="" id="myselect" >
+            <option value="C++">C++</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+        </select>
+        <input type="submit" value="submit" id="final">
+    </form>
+    <p id="display"></p>
+    <a href="#" id="menu1">menu1</a>
+    <a href="#" id="menu2">menu2</a>
+
+    <script>
+        /* focus and blur */
+        const Mytext=document.getElementById("mytext");
+        Mytext.addEventListener("focus",change_color)
+        Mytext.addEventListener("blur",unchange_color)
+
+        function change_color(){
+            Mytext.style.backgroundColor="skyblue"
+        }
+        function unchange_color(){
+            Mytext.style.backgroundColor="pink"
+        }
+
+        /* change */
+        const data_select=document.getElementById("myselect")
+        data_select.addEventListener("change",getMenu)
+        
+        function getMenu(){
+            const save=document.getElementById("display")
+            console.log(data_select.value)
+            save.innerText = `${data_select.value}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.darkmode{
+    border: 3px solid rgb(245, 4, 4);
+    background-color: rgb(96, 251, 13);
+    margin: 10px;
+    padding: 10px;
+}
+.lightmode{
+    border: 3px solid rgb(4, 40, 245);
+    background-color: rgb(237, 141, 5);
+    margin: 10px;
+    padding: 10px;
+}
+
+.red{
+    background-color: rgb(169, 47, 47);
+}
+.light{
+    background-color: none;
+}
