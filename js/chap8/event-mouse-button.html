@@ -7,7 +7,8 @@
     <script>
     window.onload = function() {
         let img = document.querySelector('img')      
-        img.onmousedown = (event) => {
+        img.onmouseup = (event) => {
+            //console.log(event.button)
             let button = event.button
             let mbt = ''
             switch(button) {
