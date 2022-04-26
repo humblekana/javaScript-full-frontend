@@ -37,11 +37,15 @@
         let div = document.querySelector('div')
         let span = document.querySelector('span')
 
-        //title.style.color = 'blue'
+        const temp = getComputedStyle(p).border
+        console.log(temp)
+        title.style.color = 'blue'
+        
         //alert(span.style.color)
-        alert(getComputedStyle(span).color)
+        console.log(getComputedStyle(span).color)
 
         let clss = div.classList //el.style.fontWeight)
+        console.log(clss)
         for (c of clss) {
             //document.write(c + '<br>')
         }
