@@ -6,7 +6,7 @@
     <title>Document</title>
     <script>
     function isValidKey(event) {
-        var	keyCode = event.keyCode            //หรือ event.which 
+        var	keyCode = event.keyCode  //หรือ event.which 
         if (keyCode < 48 || keyCode > 57) {     //0 => 48, 9 => 57
             alert("กรุณาเลือกปุ่ม 0 - 9 เท่านั้น")
         } else {
@@ -16,6 +16,6 @@
     </script>
 </head>
 <body onkeydown="isValidKey(event)">
-    
+    <!-- มีหรือไม่มี event ในฟังชันก็ได้ -->
 </body>
 </html>
