@@ -26,10 +26,9 @@
 		    //ปกติ เมื่อคลิกที่ลิงก์ หากกำหนด URL ให้กับ href มันจะเปิดไปยังเว็บไซต์แห่งนั้น 
 		    //ซึ่งเป็นพฤติกรรมแบบปกติ แต่หากเราต้องการยกเลิก ก็ให้เรียกเมธอด preventDefault()
         }
-
     </script>
 </head>
-<body onkeydown="alert(String.fromCharCode(event.keyCode))">
+<body onkeyup="alert(String.fromCharCode(event.keyCode))">
     <button id="bt">OK</button><br><br>
     <img src="js.png" width="80"><br><br>
     <a href="http://www.example.com" onclick="clickLink(event)">Go to...</a><br>
