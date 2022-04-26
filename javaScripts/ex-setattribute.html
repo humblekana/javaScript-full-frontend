@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        สวัสดีครับ
+    </div>   
+    <button id="btn1">ลบ1</button> 
+    <button id="btn2">ลบ2</button> 
+    <script>
+        const div = document.querySelector("div")
+        // setAttribute
+        div.setAttribute("class","color")
+        // getAttribute
+        console.log(div.getAttribute("class"))
+        
+        document.querySelector("#btn1").addEventListener("click",function(){
+            // จะส่งหรือไม่ส่ง parameter ถ้ากำหนดชื่อเป็น event ก็ไม่มีปัญหา 
+            // แต่ถ้าไม่ส่งต้องกำหนดเป็น event เท่านั้น ถ้าส่งก็เอาตัว parameter นั้นมาใช้
+            console.log(event.target)
+            // removeAttribute
+            div.removeAttribute("class")
+        })
+    
+        document.querySelector("#btn2").addEventListener("click",deleteAtt)
+    
+        function deleteAtt(){
+            console.log(event.target)
+            div.removeAttribute("class")
+        }
+    </script>
+</body>
+</html>

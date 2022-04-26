@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .reder{
+            background-color: red;
+        }
+        
+</style>
+</head>
+<body>
+    <div id="div1" >
+        <span>1</span>
+        <span>2</span>
+    </div>    
+    <div id="div2">
+        <span>dog</span>
+        <span>cat</span>
+    </div>    
+    <div id="div3">
+        <span>kuy</span>
+        <span>hee</span>
+    </div>
+    
+    <form >
+        <input type="radio" name="game" value="apex">apex
+        <input type="radio" name="game" value="rov">rov
+        <input type="radio" name="game" value="pb">pb
+    </form>  
+    
+    <p class="reder">ปิกาจู</p>
+    <p class="reder">โนบิตะ</p>
+    
+    <script>
+        // document.getElementById
+        const div1 = document.getElementById("div1")
+        console.log(div1)  
+        
+        //  document.getElementsByName
+        const div = document.getElementsByName("game")
+        console.log(div)
+        div.forEach(function(e){
+            console.log(e)
+        })
+
+        // document.getElementsByTagName
+        const alldiv = document.getElementsByTagName("div")
+        console.log(alldiv)
+        for (e of alldiv){
+            console.log(e)
+            const span = e.getElementsByTagName("span")
+            for (j of span){
+                console.log(j)
+            }
+        }
+        // document.getElementsByClassName
+        const reder = document.getElementsByClassName("reder") 
+        console.log(reder)
+        console.log(reder[0])
+        console.log(reder[1])
+
+        //ในทำนองเดียวกัน ที่เหลือ  document.querySelector document.querySelectorAll
+        
+    
+    </script>
+</body>
+</html>
