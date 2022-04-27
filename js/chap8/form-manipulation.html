@@ -38,11 +38,13 @@
         }
 
         for (i = 0; i < form.length; i++) {  
+            //console.log(form.elements[i].id)
             document.write(form.elements[i].id)
         }
 
         for (el of form.elements) {
             if (el.type == 'text') {
+                //console.log(el.value)
                 document.write(el.value)
             }
         }
