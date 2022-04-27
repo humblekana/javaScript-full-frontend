@@ -25,7 +25,7 @@
         text.onkeydown = function(event) {
             let k = event.keyCode  //event.which
             if ((k >= 65 && k <= 71) || (k >= 97 && k <= 102) || k == 8 || k == 46) {
-
+                //console.log(String.fromCharCode(k))
                 //ใส่อักขระลงในช่องรับข้อมูลตามปกติ
             } else {
                 event.preventDefault()
