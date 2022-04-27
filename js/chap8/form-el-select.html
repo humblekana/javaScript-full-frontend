@@ -24,11 +24,11 @@
 
     <script>
         let color = document.getElementById('color')
-        let white = new Option('white', 'ขาว')   //text, value
+        let white = new Option('ขาว', 'ขาว')   //text, value
         color.add(white)           //เพิ่มเป็นรายการสุดท้าย
 
         let yellow = document.createElement('option')
-        yellow.value = 'yellow'    //yellow.setAttribute('value', 'yellow')
+        yellow.value = 'เหลือง'    //yellow.setAttribute('value', 'yellow')
         yellow.text = 'เหลือง'      //yellow.setAttribute('text', 'เหลือง')
         color.add(yellow, 3)       //เพิ่ม (แทรก) ลงในลำดับที่ 3 (รายการแรกลำดับเป็น 0)
 
