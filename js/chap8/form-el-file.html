@@ -12,6 +12,7 @@
     <script>
         let file = document.getElementById('file')
         file.onchange = function(event) {
+            //console.log(event.target)
             let str = `จำนวนไฟล์ที่เลือก: ${this.files.length} \n`
             let nFormat = new Intl.NumberFormat()
             for (f of this.files) {
