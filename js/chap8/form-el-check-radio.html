@@ -27,7 +27,7 @@
         let button = document.getElementById('button')
         let checkbox = document.querySelectorAll('[type="checkbox"]')
         let radio = document.getElementsByName('fruit')
-
+        
         function checkSelection() {
             //checkbox เลือกได้รายการ เราอาจเก็บรายการที่ถูกเลือกไว้ในอาร์เรย์
             let flowers = []
@@ -36,7 +36,7 @@
                     flowers.push(chk.value)
                 }
             }
-            alert(flowers.join(', '))
+            alert(flowers.join(','))
 
             for (rdo of radio) {
                 if (rdo.checked) {
