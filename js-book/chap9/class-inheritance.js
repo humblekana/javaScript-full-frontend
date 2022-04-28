@@ -56,11 +56,10 @@ console.log(simpleDate.getShortDate())
 //console.log(simpleDate.getLongDate())  //Error
 //console.log(simpleDate.isLeapYear())   //Error
 
-/*
-class ThaiDate2 extends SimpleDate {
-    constructor(year, month, date, hour=0, minute=0) {
-        super(year, month, date)
 
+/*class ThaiDate2 extends SimpleDate {
+    constructor(year, month, date, hour=0, minute=0) {
+        super(year, month, date)  // ประกาศ super ไว้ส่วนแรกทุกครั้ง
         this.year = year
         this.month = month
         this.date = date
@@ -76,10 +75,10 @@ class ThaiDate2 extends SimpleDate {
         const w = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์']
 
         let wd = new Date(this.year, this.month-1, this.date).getDay()
+        return wd
         
     }
 }
 
 const thDate2 = new ThaiDate2(2020, 8, 4)
-thDate2.getFullDate()
-*/
+console.log(thDate2.getFullDate())*/
