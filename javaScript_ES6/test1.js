@@ -1,5 +1,5 @@
 function createNum(x,func){
-    if (x>10){
+    if (x<10){
         func(x,10)
     }else{
         func(x,20)
@@ -17,4 +17,5 @@ let Addnum = (x,y)=>{
 function rEpeat(x,y){
     console.log("สามารถใส่ได้",x,y)
 }
+
 

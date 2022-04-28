@@ -1,5 +1,7 @@
-fullname = (fname,lname)=>fname+lname
+fullname = (fname,lname)=>{
+    return fname+lname
+}
 Age = (age)=>"อายุ"+" "+age
 
-console.log(fullname("kana","smart"))
+console.log(fullname("kana","dss"))
 console.log(Age(20))
