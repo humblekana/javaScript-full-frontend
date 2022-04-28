@@ -1,6 +1,6 @@
-const math = require('./node-module')
+const math = require('./node-module.js')
 
-let s = math.sum(...[7, 11, 108, 1009])
+let s = math.sum(...[7,11,108,1009])
 console.log(s)
 
 let r = new math.Random()
