@@ -1,4 +1,3 @@
-
 function sum(...data) {
     let sum = 0
     for (d of data) {

@@ -1,4 +1,3 @@
-
 const math = require('./node-module')
 
 let s = math.sum(...[7, 11, 108, 1009])
