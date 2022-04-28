@@ -23,7 +23,7 @@ class ThaiDate {
     constructor(year, month, date) {
         this.year = year
         this.month = month
-        this.date = day
+        this.date = date
     }
 
     getShotDate() {
