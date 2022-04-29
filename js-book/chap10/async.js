@@ -1,4 +1,3 @@
-
 async function success() {
     let str = 'Success'
     return str           //return Promise.resolve(str)
