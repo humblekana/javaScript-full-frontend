@@ -14,13 +14,9 @@
             } else {
                 reject(r + ' => reject')
             }
-        }).then(result => {
-            alert(result)
-        }).catch(reason => {
-            alert(reason)
-        }).finally(() => {
-            alert('Promise done!')
-        })        
+        }).then(result =>alert(result)
+        ).catch(reason => alert(reason)
+        ).finally(() => alert('Promise done!'))        
     </script>
 </body>
 </html>
