@@ -27,9 +27,7 @@ scs.then(result => console.log(result))
 
 fail().catch(reason => console.log(reason))
 
-test()
-    .then(result => console.log(result))
-    .catch(reason => console.log(reason))
+test().then(result => console.log(result)).catch(reason => console.log(reason))
  
 console.log('a')
 console.log('b')

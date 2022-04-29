@@ -15,9 +15,7 @@ new Promise((resolve, reject) => {
 
 
 
-new Promise((resolve) => {
-    resolve(Math.random())
-}).then((result) => console.log("num2",result))
+new Promise((resolve) => resolve(Math.random())).then((result) => console.log("num2",result))
 
 const p = Promise.resolve(Math.random())
 p.then(result=>console.log("num3",result))

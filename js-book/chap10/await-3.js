@@ -6,9 +6,9 @@ async function test1() {
 }
 
 async function test2() {
-    console.log(1)
-    await Promise.resolve(2).then(r => console.log(r))
-    console.log(3)
+    console.log("a")
+    await Promise.resolve("b").then(r => console.log(r))
+    console.log("c")
 }
 
 test1()
