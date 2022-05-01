@@ -6,16 +6,30 @@ function createNum(x,func){
     }
 }
 
-let nextNum = (a,b)=> {
-    rEpeat(a,b) 
-}
+/*createNum(5,function(a,b){
+    console.log(a,b)
+})*/
 
-let Addnum = (x,y)=>{
-    console.log(x+y)
-}
+/*createNum(5,(a,b)=>{
+    console.log(a,b)
+})*/
+//---------------------------------------------
 
-function rEpeat(x,y){
-    console.log("สามารถใส่ได้",x,y)
+/*let AddNum1 = (a,b)=> {
+     console.log(a,b)
 }
+createNum(3,Addnum1)*/
+
+/*let Addnum2 = function(a,b){
+    console.log(a,b)
+}
+createNum(9,Addnum2)*/
+//----------------------------------------------
+
+/*function upNum1(a,b){
+    console.log(a+b)
+}
+createNum(3,upNum1)*/
+
 
 
