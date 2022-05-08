@@ -21,23 +21,22 @@ test1()*/
     if (num == "kana"){
         return await Promise.resolve(num)    
     }else{
-        
         return await Promise.reject(num)     
     }
-      
 }
 
 async function test4(){
     const data_name = ["nat","nut"]
     const num = data_name[Math.floor(Math.random()*2)]
-    if (num == "kana"){
+    if (num == "nat"){
         return await Promise.resolve(num)    
     }else{
-        
         return await Promise.reject(num)     
     }
 }
 
-test4().then(data=>console.log(data)).catch(data=>console.log(data))
-const result = test3() 
-result.then(data=>console.log(data)).catch(data=>console.log(data))*/
+test3().then(data=>console.log(data)).catch(data=>console.log(data))
+test4().then(data=>console.log(data)).catch(data=>console.log(data))*/
+//const result = test3() 
+
+

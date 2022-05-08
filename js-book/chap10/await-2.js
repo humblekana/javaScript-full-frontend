@@ -34,8 +34,9 @@ async function letter() {
 }
 
 
-num().then(data=>console.log(data))
-letter().then(data=>console.log(data))*/
+
+letter().then(data=>console.log(data))
+num().then(data=>console.log(data))*/
 
 
 
@@ -45,11 +46,11 @@ letter().then(data=>console.log(data))*/
     const n = Math.random()*20
     console.log(1)
     console.log(await Promise.resolve(2))
-    console.log(3)
+    //console.log(3)
     if (n>10){
-        return "kana"       
+        return Promise.resolve("kana")       
     }else{
-        return "kai"
+        return Promise.resolve("kai") 
     }
 }
 async function letter() {
@@ -58,6 +59,8 @@ async function letter() {
     console.log('c')
 }
 
-num().then(data=>console.log(data))
+//num().then(data=>console.log(data))
 letter()
-//num().then(data=>console.log(data))*/
+num().then(data=>console.log(data))*/
+//1 a 2 b c kai
+//a 1 b c 2 kai
