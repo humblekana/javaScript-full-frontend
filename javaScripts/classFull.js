@@ -42,7 +42,6 @@ class Displayinfo{
     defraud(){
         console.log(Displayinfo.sendAge())
     }
-
 }
 
 
