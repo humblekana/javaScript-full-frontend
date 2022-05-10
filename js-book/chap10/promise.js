@@ -8,7 +8,7 @@ new Promise((resolve, reject) => {
 }).then(result => {
     console.log("num1",result)
 }).catch(reason => {
-    console.log(reason)
+    console.log("num1",reason)
 }).finally(() => {
     console.log('Promise done!')
 })
