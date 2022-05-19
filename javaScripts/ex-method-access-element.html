@@ -6,34 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .reder{
-            background-color: red;
-        }
+        
         
 </style>
 </head>
 <body>
-    <div id="div1" >
+    <div id="div1" style="background-color: red;">
         <span>1</span>
         <span>2</span>
     </div>    
-    <div id="div2">
+    <div id="div2" style="background-color: green;">
         <span>dog</span>
         <span>cat</span>
     </div>    
-    <div id="div3">
-        <span>kuy</span>
-        <span>hee</span>
+    <div id="div3" style="background-color: orange;">
+        <span>apple</span>
+        <span>banana</span>
     </div>
     
-    <form >
+    <form>
         <input type="radio" name="game" value="apex">apex
         <input type="radio" name="game" value="rov">rov
         <input type="radio" name="game" value="pb">pb
     </form>  
     
-    <p class="reder">ปิกาจู</p>
-    <p class="reder">โนบิตะ</p>
+    <p class="reder" style="background-color: pink;">ปิกาจู</p>
+    <p class="reder" style="background-color: skyblue;">โนบิตะ</p>
     
     <script>
         // document.getElementById
@@ -41,10 +39,10 @@
         console.log(div1)  
         
         //  document.getElementsByName
-        const div = document.getElementsByName("game")
-        console.log(div)
-        div.forEach(function(e){
-            console.log(e)
+        const formInside = document.getElementsByName("game")
+        console.log(formInside)
+        formInside.forEach(function(element){
+            console.log(element)
         })
 
         // document.getElementsByTagName
