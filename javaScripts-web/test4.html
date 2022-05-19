@@ -12,6 +12,7 @@
             max-width: 200px; 
             min-width: 70px; 
             width:10%;
+            border: 0;
         }    
     </style>
 </head>
@@ -20,8 +21,6 @@
     <button> กดที่นี่2</button>
     <script>
         const btn = document.getElementsByTagName("button")
-        //console.log(btn[0])
-        //console.log(btn[1])
         btn[0].addEventListener("click",(event)=>{
             console.log(event.target)
         })
