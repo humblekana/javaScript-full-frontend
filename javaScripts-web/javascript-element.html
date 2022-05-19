@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 480px;
+            height: 360px;
+            background-color: rgb(255, 164, 164);
+        }
+        .box2{
+            width: 480px;
+            height: 360px;
+            background-color: rgb(255, 209, 164);
+        }
+        .box3{
+            width: 480px;
+            height: 360px;
+            background-color: rgb(164, 255, 179);
+        }
+        .box4{
+            width: 480px;
+            height: 360px;
+            background-color: rgb(164, 190, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <script>
+        const div = document.getElementsByTagName("div")
+        document.onscroll = (event)=>{
+            for (element of div){
+                if (window.screenY > element.getBoundingClientRect().top-200){
+                    element.innerText = "element pass"
+                }else{
+                    element.innerText = ""
+                }
+            } 
+        }
+        // - offsetWidth offsetHeight คือความกว้างของ element และความสูงของ element ตามลำดับ
+        // - clientWidth clientHeight คือความกว้างของ element และความสูงของ element ตามลำดับ
+        // - offsetTop  คือ จุดระยะห่างด้านบนของ element นั้นจากบราวเซอร์บนสุด
+        // - offsetLeft คือ จุดระยะห่างด้านซ้ายของ element นั้นจากบราวเซอร์ซ้ายสุด
+        // - getBoundingClientRect().top คือ พื้นที่ด้านบนมีระยะเท่าไหร่จากบราวเซอร์
+        // - getBoundingClientRect().left คือ พื้นที่ด้านซ้ายมีระยะเท่าไหร่จากบราวเซอร์
+        // - scrollY คือ ระยะห่างที่เรา scroll ในแนวแกน Y
+        // - scrollX คือ ระยะห่างที่เรา scroll ในแนวแกน X
+        // - window.innerHeight คือ ความสูงของบราวเซอร์
+        // - window.innerWidth คือ ความกว้างของบราวเซอร์
+   </script>
+</body>
+</html>
