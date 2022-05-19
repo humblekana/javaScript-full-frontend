@@ -44,5 +44,6 @@ class Displayinfo{
     }
 }
 
+Displayinfo.displayAge()
 
 
