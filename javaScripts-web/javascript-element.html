@@ -41,7 +41,8 @@
         const div = document.getElementsByTagName("div")
         document.onscroll = (event)=>{
             for (element of div){
-                if (window.screenY > element.getBoundingClientRect().top-200){
+                //console.log("rect",element.getBoundingClientRect().top)
+                if (window.scrollY > element.getBoundingClientRect().top){
                     element.innerText = "element pass"
                 }else{
                     element.innerText = ""
