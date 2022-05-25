@@ -20,5 +20,15 @@ console.log(Days.getHours())
 console.log(Days.getMinutes())
 console.log(Days.getSeconds())
 console.log(Days.getTime())
+console.log("------------------------------")
 
-
+let DayTest = new Date("2022/5/25 12:53:0");
+console.log(DayTest)
+console.log(DayTest.getDay())
+console.log(DayTest.getDate())
+console.log(DayTest.getMonth())
+console.log(DayTest.getFullYear())
+console.log(DayTest.getHours())
+console.log(DayTest.getMinutes())
+console.log(DayTest.getSeconds())
+console.log(DayTest.getTime())
