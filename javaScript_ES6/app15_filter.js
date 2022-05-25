@@ -1,21 +1,20 @@
 // array Filter
 
-const data = [10,20,30,40,50]
-/*let dataresult = data.filter(e=>{
-    return e>20
-})*/
-let dataresult = data.filter(e=>e>10)
+// case 1
+/* const data = [10,20,30,40,50]
+let dataresult = data.filter(e=>{
+    return e>15
+})
+console.log(dataresult) */
 
-console.log(dataresult)
-
+// case 2
 const info = [
     {fname:"kana",salary:250,department:"student"},
-    {fname:"kong",salary:150,department:"nisit"},
+    {fname:"kong",salary:350,department:"nisit"},
     {fname:"kai",salary:300,department:"doctor"},
     {fname:"pao",salary:500,department:"teacher"},
 ]
-
-let inforesult = info.filter(e=>{
+const inforesult = info.filter(e=>{
     return e.salary >= 300 && e.salary < 400
 })
 
