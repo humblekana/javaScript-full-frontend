@@ -6,4 +6,3 @@ if (x==10){
     console.log("y="+y);
 }
 console.log("y="+y)
-
