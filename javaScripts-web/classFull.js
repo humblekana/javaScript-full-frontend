@@ -38,10 +38,12 @@ class Displayinfo{
         let age = Math.floor(Math.random()*50)
         return age
     }
-    
+    /* ถ้าฟังชันก์ไม่เป็น static ใช้ this ไม่ได้ */
     defraud(){
         console.log(Displayinfo.sendAge())
     }
+    
+    
 }
 
 Displayinfo.displayAge()
