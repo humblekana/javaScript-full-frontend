@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getApiGithub1(){
+            fetch('https://api.github.com/users/humblekana')
+            .then(response=>response.json()).then(data=>{
+                const info = JSON.stringify(data,undefined,2)
+                console.log(info)
+            }).catch(error=>console.log(error))
+        }
+        
+        async function getApiGithub2(){
+            const response = await fetch('https://api.github.com/users/humblekana')
+            const data = await response.json()
+            const info = JSON.stringify(data,undefined,2)
+            console.log(info)
+            
+        }
+        getApiGithub1()
+        getApiGithub2()
+    </script>
+</body>
+</html>
