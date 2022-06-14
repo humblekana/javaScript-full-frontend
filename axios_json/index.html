@@ -31,10 +31,25 @@
     <div id="area">
 
     </div>
+    
     <script>
-        // ฟังชันก์ในการ GET
-        function GetAxios(){
+        // ฟังชันก์ในการ GET version1
+        
+        /* function GetAxios(){
             axios.get('http://localhost:3000/users')
+            .then(response=>{
+                console.log(response.data)
+            }).catch(error=>{
+                console.log(error)
+            })
+        } */
+        
+        // ฟังชันก์ในการ GET version 2
+        function GetAxios(){
+            axios({
+                url:'http://localhost:3000/users',
+                method:'get'
+            })
             .then(response=>{
                 console.log(response.data)
             }).catch(error=>{
@@ -81,7 +96,7 @@
                 console.log(error)
             })
         }
-    </script>
+    </script> 
 </body>
 </html>
 </body>
