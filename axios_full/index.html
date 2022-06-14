@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <button id="get" onclick="GetAxios()">get</button>
+    <button id="post" onclick="PostAxios()">post</button>
+    <button id="put" onclick="PutAxios()">put</button>
+    <button id="delete" onclick="DeleteAxios()">delete</button>
+    <div id="area">
+
+    </div>
+    <script>
+        // ฟังชันก์แสดงผลข้อมูล
+        function displayData(information){
+            information.forEach((e,i)=>{
+                const text = document.createElement('p')
+                text.innerText = (i+1) +'. ' + e.title 
+                document.getElementById("area").appendChild(text)
+            })
+        }
+        
+        // ฟังชันก์ในการ GET
+        function GetAxios(){
+            axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(response=>{
+                console.log(response.data)
+                displayData(response.data)
+            })
+        }
+        
+        // ฟังชันก์ในการ POST
+        function PostAxios(){
+            axios.post(`https://jsonplaceholder.typicode.com/posts`,{
+                "id": 101,
+                "title": "hello axios",
+                "body": "axios on the best"
+            }).then(response=>{
+                console.log(response.data)
+                
+            }).catch(error=>console.log(error))
+        }
+        
+        // ฟังชันก์ในการ PUT
+        function PutAxios(){
+            axios.put(`https://jsonplaceholder.typicode.com/posts/1`,{
+                "id": 101,
+                "title": "hello axios new data",
+                "body": "axios on the bad"
+            }).then(response=>{
+                console.log(response.data)
+            }).catch(error=>console.log(error))
+        }
+
+        // ฟังชันก์ในการ DELETE
+        function DeleteAxios(){
+            axios.delete(`https://jsonplaceholder.typicode.com/posts/1`,)
+            .then(response=>{
+                console.log(response.data)
+            }).catch(error=>console.log(error))
+        }
+        
+        
+    </script>
+</body>
+</html>
