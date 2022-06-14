@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="axios.min.js"></script>
+</head>
+<body>
+    <button>GET</button>
+    <button>POST</button>
+
+    <script>
+        axios({
+            url:'http://127.0.0.1:3000/axios_testdata',
+            method:'get',
+            params:{password:'9893'},
+            timeout:10000
+        }).then(response=>{
+            console.log(response.data)
+        }).catch(error=>{
+            console.log(error)
+        })
+    </script>
+</body>
+</html>
