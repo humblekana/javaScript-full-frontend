@@ -19,25 +19,13 @@
     <button id="post" onclick="PostAxios()">post</button>
     <button id="put" onclick="PutAxios()">put</button>
     <button id="delete" onclick="DeleteAxios()">delete</button>
-    <div id="area">
-
-    </div>
+    
     <script>
-        // ฟังชันก์แสดงผลข้อมูล
-        function displayData(information){
-            information.forEach((e,i)=>{
-                const text = document.createElement('p')
-                text.innerText = (i+1) +'. ' + e.title 
-                document.getElementById("area").appendChild(text)
-            })
-        }
-        
         // ฟังชันก์ในการ GET
         function GetAxios(){
             axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(response=>{
                 console.log(response.data)
-                displayData(response.data)
             }).catch(error=>console.log(error))
         }
         

@@ -5,78 +5,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fetch API</title>
+    <style>
+        button{
+            width: 150px;
+            height: 70px;
+        }
+    </style>
 </head>
 <body>
     <ul id="myul"></ul>
-    <button id="btn0">แสดงข้อมูล</button>
-    <button id="btn1">เพิ่มข้อมูล</button>
-    <button id="btn2">อัพเดทข้อมูล</button>
-    <button id="btn3">ลบข้อมูล</button>
-    <script>
-        /* ดึงข้อมูลจาก API */
-        function showData(data){
-            const mylist = document.getElementById("myul")
-            for (let val of data){
-                const myLi = document.createElement("li")
-                myLi.innerText = `User: ${val.first_name} ${val.last_name} | ${val.email}`
-                mylist.appendChild(myLi)
-            }
-        }
-        //fetch("http://localhost:3000/users").then(response => response.json()).then(data => showData(data))
-        
-        const bt0 = document.getElementById("btn0")
-        bt0.addEventListener("click",getData)
-        
-        /* example การใช้ async await เพื่ือแสดงข้อมูล*/
-        async function getData(){
-            const response = await fetch("http://localhost:3000/users");
-            const data = await response.json()
-            showData(data)
+    <button id="btn0" onclick="GetData()">แสดงข้อมูล</button>
+    <button id="btn1" onclick="PostData()">เพิ่มข้อมูล</button>
+    <button id="btn2" onclick="UpdateData()">อัพเดทข้อมูล</button>
+    <button id="btn3" onclick="DeleteData()">ลบข้อมูล</button>
+    
+    <!-- <script>
+       // GET
+        function GetData(){
+            fetch("http://localhost:3000/users",{
+                method:'get'
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error =>console.log(error))
         }
         
-        /* เพิ่มข้อมูลใน API */
-        const bt1 = document.getElementById("btn1")
-        bt1.addEventListener("click",Create_data)
-        function Create_data(){
+        // POST
+        function PostData(){
             fetch("http://localhost:3000/users",{
                 method: "post",
                 headers: {
                     "Content-Type": "application/json" 
                 },
                 body: JSON.stringify({
-                    "id": 7,
+                    "id": 6,
                     "first_name": "Kana",
                     "last_name": "dangerous",
                     "email": "kana123@yahoo.com"
                 })
-            }).then(response => response.json()).then(data => showData(data))    
+            }).then(response => response.json())
+            .then(data => console.log(data))    
+            .catch(error =>console.log(error))
         }
-
-        /* อัพเดทข้อมูลใน API */
-        const bt2 = document.getElementById("btn2")
-        bt2.addEventListener("click",Update_data)
-        function Update_data(){
+        
+        // PUT
+        function UpdateData(){
             fetch("http://localhost:3000/users/6",{
                 method: "put",
                 headers: {
                     "Content-Type": "application/json" 
                 },
                 body: JSON.stringify({
-                    "id": 7,
+                    "id": 6,
                     "first_name": "Roronoa",
                     "last_name": "Zoro",
                     "email": "Zoro123@yahoo.com"
                 })
-            }).then(response => response.json()).then(data => showData(data))    
+            }).then(response => response.json())
+            .then(data => console.log(data))    
+            .catch(error =>console.log(error))
         }
-        /* ลบข้อมูลใน API */
-        const bt3 = document.getElementById("btn3")
-        bt3.addEventListener("click",Delete_data)
-        function Delete_data(){
-            fetch("http://localhost:3000/users/7",{method: "delete"})
-            .then(response => response.json()).then(data => showData(data))    
+        
+        // DELETE
+        function DeleteData(){
+            fetch("http://localhost:3000/users/6",{
+                method: "delete"
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))    
+            .catch(error =>console.log(error))
         }
    // json-server user.json ใช้เรียก server json
+   </script> -->
+
+   <script>
+        // GET
+        async function GetData(){
+            try{
+                const response = await fetch("http://localhost:3000/users",{
+                    method:'get'
+                })
+                const data = await response.json()
+                console.log(data)
+            }catch(error) {
+                console.log(error)
+            }
+        }
+        
+        // POST
+        async function PostData(){
+            try{
+                const response = await fetch("http://localhost:3000/users",{
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify({
+                        "id": 6,
+                        "first_name": "Kana",
+                        "last_name": "dangerous",
+                        "email": "kana123@yahoo.com"
+                    })
+                })
+                const data = await response.json()
+                console.log(data)
+            }catch(error) {
+                console.log(error)
+            }
+        }
+        
+        // PUT
+        async function UpdateData(){
+            try{
+                const response = await fetch("http://localhost:3000/users/6",{
+                    method: "put",
+                    headers: {
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify({
+                    "id": 6,
+                    "first_name": "Roronoa",
+                    "last_name": "Zoro",
+                    "email": "Zoro123@yahoo.com"
+                })
+                })
+                const data = await response.json()
+                console.log(data)
+            }catch(error) {
+                console.log(error)
+            }
+        }
+
+        // DELETE
+        async function DeleteData(){
+            try{
+                const response = await fetch("http://localhost:3000/users/6",{
+                    method: "delete"
+                })
+                const data = await response.json()
+                console.log(data)
+            }catch(error) {
+                console.log(error)
+            }
+        }
    </script>
 </body>
 </html>
