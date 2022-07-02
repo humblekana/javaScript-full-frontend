@@ -28,8 +28,21 @@ console.log(test.display2())
 console.log(Setting1.randomNum1())
 console.log(Setting1.randomNum2())
 
+//เปลี่ยนค่าได้ 
+test.hello1 = 'change in the world'
+test.hello2 = 'hello react'
+test.day = 25
+test.month = 11
+test.year = 2022
 console.log(test.hello1)
 console.log(test.hello2)
+console.log(test.day)
+console.log(test.month)
+console.log(test.year)
+
+// เมื่อเปลี่ยนค่าแล้ว
+console.log(test.display1())
+console.log(test.display2())
 console.log("--------------------------------------")
 
 

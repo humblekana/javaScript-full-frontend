@@ -1,35 +1,47 @@
 function createNum(x,func){
-    if (x<10){
-        func(x,10)
-    }else{
-        func(x,20)
-    }
+    let a = 15
+    let b = 3
+    console.log(`${a} + ${b} = ${a+b}`)
+    console.log(`${a} - ${b} = ${a-b}`)
+    console.log('do someting function creatNum success')
+    
+    // เรียกฟังชันก์ที่กำหนดเป็น callback
+    func(1,2)
 }
 
-/*createNum(5,function(a,b){
-    console.log(a,b)
-})*/
-
-/*createNum(5,(a,b)=>{
-    console.log(a,b)
-})*/
-//---------------------------------------------
-
-/*let AddNum1 = (a,b)=> {
-     console.log(a,b)
+function callbackTestOne(a,b){
+    console.log(a,b,'regular function')
 }
-createNum(3,Addnum1)*/
 
-/*let Addnum2 = function(a,b){
-    console.log(a,b)
-}
-createNum(9,Addnum2)*/
-//----------------------------------------------
+createNum(5,function(a,b){
+    console.log(a,b,'anonymous function')
+})
 
-/*function upNum1(a,b){
-    console.log(a+b)
+console.log('--------------------------------------')
+
+createNum(10,(a,b)=>{
+    console.log(a,b,'arrow function')
+})
+
+console.log('--------------------------------------')
+
+createNum(10,callbackTestOne)
+
+//-------------------------------------------------------------------------------
+
+let AddNum1 = (a,b)=> {
+     console.log(a,b,'use name arrow function in callback')
 }
-createNum(3,upNum1)*/
+
+let Addnum2 = function(a,b){
+    console.log(a,b,'use name anonymous function in callback')
+}
+
+createNum(3,AddNum1)
+createNum(9,Addnum2)
+
+
+
 
 
 
