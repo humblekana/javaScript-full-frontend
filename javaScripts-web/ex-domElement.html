@@ -11,59 +11,88 @@
 </style>
 </head>
 <body>
+    
+    <!-- section 1 -->
     <div id="div1" style="background-color: red;">
         <span>1</span>
         <span>2</span>
     </div>    
+
     <div id="div2" style="background-color: green;">
         <span>dog</span>
         <span>cat</span>
-    </div>    
-    <div id="div3" style="background-color: orange;">
-        <span>apple</span>
-        <span>banana</span>
-    </div>
+    </div> 
     
-    <form>
+    <script>
+        // document.getElementById
+        const a = document.getElementById("div1")
+        const b = document.getElementById("div2")
+        console.log(a)
+        console.log(b)
+    </script>
+    
+    
+    <!-- section 2 -->
+    <!-- <form>
         <input type="radio" name="game" value="apex">apex
         <input type="radio" name="game" value="rov">rov
         <input type="radio" name="game" value="pb">pb
     </form>  
     
-    <p class="text" style="background-color: pink;">ปิกาจู</p>
-    <p class="text" style="background-color: skyblue;">โนบิตะ</p>
+    <p  style="background-color: pink;">ปิกาจู</p>
+    <p  style="background-color: skyblue;">โนบิตะ</p>
+
+    <p class="bootstrap">b1</p>
+    <p class="bootstrap">b2</p>
     
     <script>
-        // document.getElementById
-        const div1 = document.getElementById("div1")
-        console.log(div1)  
-        
-        //  document.getElementsByName
-        const formInside = document.getElementsByName("game")
-        console.log(formInside)
-        formInside.forEach(function(element){
-            console.log(element)
+        // document.getElementsByName
+        // เป็น array ใช้ foreach ได้
+        const c = document.getElementsByName("game")
+        console.log(c)
+        c.forEach(el => {
+            console.log(el)
         })
 
         // document.getElementsByTagName
-        const alldiv = document.getElementsByTagName("div")
-        console.log(alldiv)
-        for (e of alldiv){
-            console.log(e)
-            const span = e.getElementsByTagName("span")
-            for (j of span){
-                console.log(j)
-            }
+        // ใช้ foreach ไม่ได้
+        const d = document.getElementsByTagName("p")
+        console.log(d)
+        for (let el=0;el<d.length;el++){
+            console.log(d[el])
         }
-        // document.getElementsByClassName
-        const text = document.getElementsByClassName("text") 
-        console.log(text)
-        console.log(text[0])
-        console.log(text[1])
 
-        //ในทำนองเดียวกัน ที่เหลือ  document.querySelector document.querySelectorAll
-        
+        // document.getElementsByclassName
+        // ใช้ foreach ไม่ได้
+        const g = document.getElementsByClassName("bootstrap")
+        console.log(g)
+        for (let el=0;el<g.length;el++){
+            console.log(g[el])
+        }
+    </script> -->
     
-    </script>
+    
+    <!-- section 3 -->
+    <!-- <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+
+    <p data-p="p1">p1</p>
+    <p data-p="p1">p1</p>
+
+    <script>
+        const h = document.querySelectorAll("span")
+        console.log(h)
+        h.forEach(el => {
+            console.log(el)
+        })
+    
+        const i = document.querySelectorAll("p[data-p]")
+        console.log(i)
+    
+    </script> -->
+    
+    
+    
 </body>
 </html>

@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Document</title>
-    <style>
-        .color{
-            background-color: red;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-    <div>
-        สวัสดีครับ
+    <div class="container text-center p-4">
+        <p id="text" >kana</p>
+        <button id="btn1" class="btn btn-primary">setAttribute</button> 
+        <button id="btn2" class="btn btn-secondary">getAttribute</button> 
+        <button id="btn3" class="btn btn-success">removeAttribute</button> 
     </div>   
-    <button id="btn1">ลบ1</button> 
-    <button id="btn2">ลบ2</button> 
-    <script>
-        const div = document.querySelector("div")
-        // setAttribute
-        div.setAttribute("class","color")
-        // getAttribute
-        console.log(div.getAttribute("class"))
-        
-        document.querySelector("#btn1").addEventListener("click",function(){
-            // จะส่งหรือไม่ส่ง parameter ถ้ากำหนดชื่อเป็น event ก็ไม่มีปัญหา 
-            // แต่ถ้าไม่ส่งต้องกำหนดเป็น event เท่านั้น ถ้าส่งก็เอาตัว parameter นั้นมาใช้
-            console.log(event.target)
-            // removeAttribute
-            div.removeAttribute("class")
-        })
     
-        document.querySelector("#btn2").addEventListener("click",deleteAtt)
-        function deleteAtt(){
-            console.log(event.target)
-            div.removeAttribute("class")
-        }
+    <script>
+        // จะส่งหรือไม่ส่ง parameter ถ้ากำหนดชื่อเป็น event ก็ไม่มีปัญหา 
+        // แต่ถ้าไม่ส่งต้องกำหนดเป็น event เท่านั้น ถ้าส่งก็เอาตัว parameter นั้นมาใช้
+        
+        const text = document.getElementById("text")
+        document.getElementById("btn1").addEventListener("click",(event) =>{
+            // setAttribute
+            text.setAttribute("class","bg-warning fs-5 fw-bold")
+            text.setAttribute("data-text","kana")
+        })
+
+        document.getElementById("btn2").addEventListener("click",(event) =>{
+            // getAttribute
+            console.log(text.getAttribute("class"))
+            console.log(text.getAttribute("data-text"))
+        })
+
+        document.getElementById("btn3").addEventListener("click",(event) =>{
+            // removeAttribute
+            text.removeAttribute("class")
+            text.removeAttribute("data-text")
+        })
     </script>
 </body>
 </html>
