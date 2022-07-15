@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container text-center p-4">
+        <p id="text" class="text-secondary fw-bold">kana</p>
+        <button id="btn0" class="btn btn-warning">detail</button>
+        <button id="btn1" class="btn btn-primary">classList add</button> 
+        <button id="btn2" class="btn btn-secondary">classList remove</button> 
+        <button id="btn3" class="btn btn-success">classList replace</button> 
+        <button id="btn4" class="btn btn-danger mt-3">classList toggle</button> 
+        <button id="btn5" class="btn btn-info mt-3">classList contains</button> 
+    </div>   
+    
+    
+    <script>
+        const text = document.getElementById("text")
+        document.getElementById("btn0").addEventListener("click",(event) =>{
+            // classList
+            console.log(text.classList)
+            text.classList.forEach(el => {
+                console.log(el)
+            })
+            
+            // className
+            console.log(text.className)
+        })
+
+        document.getElementById("btn1").addEventListener("click",(event) =>{
+            // classList add ใส่คลาส
+            text.classList.add("fs-1")
+            text.classList.add("bg-info")
+        })
+
+        document.getElementById("btn2").addEventListener("click",(event) =>{
+            // classList remove ลบคลาส
+            text.classList.remove("fs-1")
+            text.classList.remove("bg-info")
+        })
+
+        document.getElementById("btn3").addEventListener("click",(event) =>{
+            // classList replace(เก่า,ใหม่) แทนที่คลาส
+            text.classList.replace("bg-info","bg-warning")
+        })
+
+        document.getElementById("btn4").addEventListener("click",(event) =>{
+            // classList toggle ถ้ามีคลาสก็เอาออก ถ้าไม่มีคลาสก็เอาใส่
+            text.classList.toggle("bg-info")
+        })
+
+        document.getElementById("btn5").addEventListener("click",(event) =>{
+            // classList contains เทียบว่ามีคลาสนั้นไหม true/false
+            console.log(text.classList.contains("bg-info"))
+        })
+    </script>
+</body>
+</html>

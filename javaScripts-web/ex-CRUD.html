@@ -12,14 +12,53 @@
     
     <!-- ส่วนแรก -->
     <div class="container text-center p-4 border border-1 border-dark" id="content">
-    
+        <p>element 1</p>
+        <p>element 2</p>
+        <p>element 3</p>
     </div>   
     
     <div class="container text-center p-2 mt-1">
-        <button id="btn0" class="btn btn-danger">detail</button>
+        <button id="btn0" class="btn btn-danger">createElement</button>
+        <button id="btn1" class="btn btn-primary">insertBefore</button>
+        <button id="btn2" class="btn btn-secondary">replaceChild</button>
+        <button id="btn3" class="btn btn-warning">removeChild</button>
     </div>
     
-    
+    <script>
+        /* ส่วนแรก */
+        const content = document.getElementById("content")
+        document.getElementById("btn0").addEventListener("click",(event) =>{
+            // createElement , appendChild
+            const p = document.createElement("p")
+            p.innerText = "element 4"
+            p.setAttribute("class","bg-danger")
+            content.appendChild(p)
+        })
+        
+        document.getElementById("btn1").addEventListener("click",(event) =>{
+            // insertBefore(ใหม่,เดิม)
+            const p = document.createElement("p")
+            p.innerText = "element 0"
+            p.setAttribute("class","bg-info")
+            content.insertBefore(p,content.children[0])
+        })
+
+        document.getElementById("btn2").addEventListener("click",(event) =>{
+            // replaceChild(ใหม่,เดิม)
+            const p = document.createElement("p")
+            p.innerText = "element replace"
+            p.setAttribute("class","bg-warning")
+            content.replaceChild(p,content.children[0])
+        })
+
+        document.getElementById("btn3").addEventListener("click",(event) =>{
+            // removeChild(element)
+            content.removeChild(content.firstElementChild)
+        })
+    </script>
+
+
+
     <!-- ส่วนสอง -->
     <div class="container text-center p-3 mt-5" id="main">
         <p class="bg-primary" id="box1">
@@ -38,29 +77,21 @@
             <span>2.4</span>
         </p>
     </div>
-    <button id="btn1" class="btn btn-success d-block mx-auto">test</button>
+    <button id="btn4" class="btn btn-success d-block mx-auto">test</button>
         
     
     <script>
-        /* ส่วนแรก */
-        const content = document.getElementById("content")
-        document.getElementById("btn0").addEventListener("click",(event) =>{
-            // createElement , appendChild
-            const p = document.createElement("p")
-            p.innerText = "hello"
-            p.setAttribute("class","bg-danger")
-            content.appendChild(p)
-        })
-
-        
         /* ส่วนสอง */
         const main = document.getElementById("main")
         const box1 = document.getElementById("box1")
         const Inbox1 = document.getElementById("Inbox1")
         
-        document.getElementById("btn1").addEventListener("click",(event) =>{
+        document.getElementById("btn4").addEventListener("click",(event) =>{
             // childElementCount นับจำนวนโหนดลูกของ element
             console.log(main.childElementCount)
+            
+            // firstElementChild โหนดลูกตัวแรกของ element
+            console.log(main.firstElementChild)
             
             // children ได้จำรายการโหนดลูกเป็น array ใช้ forEach ไม่ได้
             console.log(main.children)

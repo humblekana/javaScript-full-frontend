@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container p-3">
+        <table class="table table-bordered text-center table-hover" id="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>สมยศ</td>
+                    <td>มานะธุระ</td>
+                </tr>
+                <tr>
+                    <td>สมชาย</td>
+                    <td>เลิศสุดวิชัย</td>
+                </tr>
+                <tr>
+                    <td>จิตรทัศน์</td>
+                    <td>ฝักเจริญผล</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-outline-primary" id="create">create row</button>
+        <button class="btn btn-outline-secondary" id="delete">delete row</button>
+    </div>
+
+    <script>
+        // rowIndex ดูแถวนั้น ว่าแถวที่เท่าไหร่เริ่มจาก 0
+        // rows รายการแถว tr ทั้งหมด ต้อง forloop เอาค่า
+        const table = document.getElementById("table")
+        /* console.log(table.rows)
+        console.log(table.rows[0])
+        console.log(table.rows[1])
+        console.log(table.rows[2])
+        console.log(table.rows[3]) */
+        /* console.log(table.children[0].children[0].rowIndex)
+        console.log(table.children[1].children[0].rowIndex)
+        console.log(table.children[1].children[1].rowIndex)
+        console.log(table.children[1].children[2].rowIndex) */
+        
+        document.getElementById("create").addEventListener("click",(event) => {
+            // insertRow ใส่แถวใหม่ให้ตาราง ตำแหน่งตามที่ระบุ
+            // insertCell ใส่คอลัมให้กับแถว
+            // เช็ครายการทั้งหมด ด้วย length
+            let numberRow = table.rows.length
+            console.log(numberRow)
+            const row = table.insertRow(numberRow)
+            const cel1 = row.insertCell(0)
+            const cel2 = row.insertCell(1)
+            cel1.innerText = "ตะวันฉาย"
+            cel2.innerText = "จำปาเรือง"
+        })
+
+        document.getElementById("delete").addEventListener("click",(event) => {
+            // deleteRow ลบแถวในตาราง ตำแหน่งตามที่ระบุ
+            let numberRow = table.rows.length
+            console.log(numberRow)
+            table.deleteRow(numberRow-1)
+            
+        })
+    </script>
+</body>
+</html>
