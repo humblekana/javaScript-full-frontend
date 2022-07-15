@@ -12,6 +12,12 @@ class Setting1{
     display2(){
         return `${this.day}/${this.month+1}/${this.year}`
     }
+    display3(){
+        this.display4()
+    }
+    display4(){
+        console.log('display4')
+    }
     static randomNum1(){
         return Math.floor(Math.random()*100)
     }
@@ -24,6 +30,7 @@ class Setting1{
 const test = new Setting1(5,10,2001)
 console.log(test.display1())
 console.log(test.display2())
+test.display3()
 
 console.log(Setting1.randomNum1())
 console.log(Setting1.randomNum2())
